@@ -47,6 +47,11 @@ public class Druide
 		}
 	}
 	
+	public void booster(Gaulois gaulois)
+	{
+		gaulois.boirePotion(preparerPotion(effetPotionMax, effetPotionMin));
+	}
+	
 	public static void main(String[] args) 
 	{
 		Druide panoramix = new Druide("Panoramix", 5, 10);
