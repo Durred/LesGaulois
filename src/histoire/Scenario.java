@@ -1,5 +1,6 @@
 package histoire;
 
+import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Romain;
 
@@ -9,6 +10,7 @@ public class Scenario {
 	{
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Romain minus = new Romain("Minus", 6);
+		Druide panoramix = new Druide("Panoramix", 5, 10);
 		
 		asterix.parler("Bonjour à tous");
 		minus.parler("UN GAU... UN GAUGAU...");

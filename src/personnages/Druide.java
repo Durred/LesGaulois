@@ -27,7 +27,7 @@ public class Druide
 		return "Le druide  " + nom + " : ";
 	}
 	
-	public void preparerPotion(int effetPotionMax, int effetPotionMin)
+	public int preparerPotion(int effetPotionMax, int effetPotionMin)
 	{
 		Random random = new Random();
 		int nb = random.nextInt(effetPotionMax);
@@ -45,11 +45,19 @@ public class Druide
 		{
 			parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force " + nb);
 		}
+		return nb;
 	}
 	
 	public void booster(Gaulois gaulois)
 	{
-		gaulois.boirePotion(preparerPotion(effetPotionMax, effetPotionMin));
+		if(gaulois.getNom().equals("Obélix"))
+		{
+			parler("Non, Obélix !... Tu n'auras pas de potion magique !");
+		}
+		else
+		{
+			gaulois.boirePotion(preparerPotion(effetPotionMax, effetPotionMin));
+		}
 	}
 	
 	public static void main(String[] args) 
