@@ -1,28 +1,15 @@
 package personnages;
 
 public class Musee {
-	Trophee[] trophees = new Trophee[100];
+	private Trophee[] trophees = new Trophee[200];
 	private int nbTrophee = 0;
 
-	public Trophee[] getTrophees() {
-		return trophees;
-	}
-
-	public void setTrophees(Trophee[] trophees) {
-		this.trophees = trophees;
-	}
-
-	public int getNbTrophee() {
-		return nbTrophee;
-	}
-
-	public void setNbTrophee(int nbTrophee) {
-		this.nbTrophee = nbTrophee;
-	}
-
-
 	public void donnerTrophees(Gaulois gaulois) {
-		gaulois.faireUneDonnation(this);
+		for(int i = 0; i < gaulois.getNbTrophees(); i++)
+		{
+			trophees[nbTrophee] = gaulois.faireUneDonnation();
+			nbTrophee++;
+		}
 	}
 	
 	public String extraireInstructionsCaml() {
